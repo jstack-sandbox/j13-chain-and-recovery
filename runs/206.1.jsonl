@@ -1,3 +1,4 @@
 {"from":"tests","to":"build:api","on":"lock_green","head":"33895229442d3f06a489dfb30b2288f17a326aa6"}
 {"from":"build:api","to":"build:screen","on":"ci_green","head":"2ff5b9cdeb2df1f6b62a12d0b3880c37a91aa820"}
 {"from":"build:screen","to":"journeys","on":"ci_green","head":"16430baf01e3f283902526b7780e86aef6ff9bc3"}
+{"from":"journeys","to":"gates","on":"pushed","head":"55f7a60fc07a982d90032d0036eb5f2b2337a01c"}
