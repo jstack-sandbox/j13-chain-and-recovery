@@ -1,2 +1,3 @@
 {"from":"tests","to":"build:api","on":"lock_green","head":"93c2c840dd0f4956bd3afe7ec1c393e762ec29cf"}
 {"from":"build:api","to":"build:screen","on":"ci_green","head":"f4c46357887e585258a7ceeca9e92e443deb574a"}
+{"from":"build:screen","to":"journeys","on":"ci_green","head":"2b9fa8997dba48c45ce68475f1f03f5d39817286"}
