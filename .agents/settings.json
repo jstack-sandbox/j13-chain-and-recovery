@@ -1,0 +1,23 @@
+{
+  "jstack": {
+    "version": "1.4.0",
+    "checksum": "sha256:d19b57a3c1dfe95ff73c8cac491b4e16fa1206b1cae9e4ecc4315c543eab2e5f"
+  },
+  "owners": {
+    "owner": "jstack-sandbox-owner"
+  },
+  "layers": ["api", "screen"],
+  "areas": {
+    "contacts": {
+      "paths": ["src/contacts/**"],
+      "risky": false
+    }
+  },
+  "profiles": {
+    "lang-a": {},
+    "runner-a": {}
+  },
+  "sessions": {
+    "model": "stand-in-model-1"
+  }
+}

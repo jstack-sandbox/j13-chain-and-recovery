@@ -1,0 +1,1 @@
+Contact = {id, workspace_id, name, email, phone optional}

@@ -1,0 +1,16 @@
+{
+  "nodes": ["tests", "build:api", "build:screen", "journeys", "gates", "reviewed"],
+  "checks": {
+    "build:api": ["01 lint api", "02 tests api"],
+    "build:screen": ["01 lint screen", "02 tests browser"]
+  },
+  "moves": [
+    {"from": "tests", "to": "build:api", "on": "lock_green"},
+    {"from": "build:api", "to": "build:screen", "on": "ci_green"},
+    {"from": "build:screen", "to": "journeys", "on": "ci_green"},
+    {"from": "journeys", "to": "gates", "on": "pushed"},
+    {"from": "gates", "to": "reviewed", "on": "ci_green"},
+    {"from": "gates", "to": "build:api", "on": "red_check", "checks": ["01 lint api", "02 tests api"]},
+    {"from": "gates", "to": "build:screen", "on": "red_check", "checks": ["01 lint screen", "02 tests browser"]}
+  ]
+}

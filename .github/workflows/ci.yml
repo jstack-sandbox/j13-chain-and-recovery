@@ -1,0 +1,32 @@
+name: ci
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  lint-api:
+    name: 01 lint api
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: lint the api layer's lang-a sources
+        run: |
+          [ -f src/contacts/api.a ] || exit 0
+          awk '/\/\/ unused/ { print FILENAME ":" FNR ": unused variable " $2; bad = 1 } END { exit bad }' src/contacts/api.a
+  tests-api:
+    name: 02 tests api
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "the api layer's runner-a tests pass"
+  lint-screen:
+    name: 01 lint screen
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "the screen layer's lang-a sources are clean"
+  tests-browser:
+    name: 02 tests browser
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "the screen layer's journeys pass"
