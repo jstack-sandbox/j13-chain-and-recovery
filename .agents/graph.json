@@ -10,6 +10,7 @@
     {"from": "build:screen", "to": "journeys", "on": "ci_green"},
     {"from": "journeys", "to": "gates", "on": "pushed"},
     {"from": "gates", "to": "reviewed", "on": "ci_green"},
+    {"from": "gates", "to": "reviewed", "on": "red_check"},
     {"from": "gates", "to": "build:api", "on": "red_check", "checks": ["01 lint api", "02 tests api"]},
     {"from": "gates", "to": "build:screen", "on": "red_check", "checks": ["01 lint screen", "02 tests browser"]}
   ]
