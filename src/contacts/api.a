@@ -8,3 +8,5 @@ list_contacts(workspace) =
     where(contacts, workspace_id = workspace),
     "name"
   )
+
+let total = 0 // unused
