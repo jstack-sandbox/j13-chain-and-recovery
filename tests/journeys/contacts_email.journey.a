@@ -1,0 +1,4 @@
+test("CONTACT-004/E1 the contact list shows each contact's email") {
+  open("/contacts")
+  expect(text("ana@example.com")).visible()
+}
