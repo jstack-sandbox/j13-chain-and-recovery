@@ -1,0 +1,4 @@
+test("CONTACT-004/E1 the contact list pages after twenty contacts") {
+  open("/contacts")
+  expect(text("Next page")).visible()
+}
