@@ -3,18 +3,12 @@ on:
   pull_request:
 permissions:
   contents: read
-env:
-  GATE: https://api.github.com/repos/${{ github.repository }}/contents/ci-gate?ref=jstack-fixtures
 jobs:
   lint-api:
     name: 01 lint api
     runs-on: ubuntu-24.04
+    environment: ci-release
     steps:
-      - name: wait until the sandbox's CI gate is open
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          until [ "$(curl -fsS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.raw" "$GATE" || echo open)" != closed ]; do sleep 5; done
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
@@ -25,30 +19,18 @@ jobs:
   tests-api:
     name: 02 tests api
     runs-on: ubuntu-24.04
+    environment: ci-release
     steps:
-      - name: wait until the sandbox's CI gate is open
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          until [ "$(curl -fsS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.raw" "$GATE" || echo open)" != closed ]; do sleep 5; done
       - run: echo "the api layer's runner-a tests pass"
   lint-screen:
     name: 01 lint screen
     runs-on: ubuntu-24.04
+    environment: ci-release
     steps:
-      - name: wait until the sandbox's CI gate is open
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          until [ "$(curl -fsS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.raw" "$GATE" || echo open)" != closed ]; do sleep 5; done
       - run: echo "the screen layer's lang-a sources are clean"
   tests-browser:
     name: 02 tests browser
     runs-on: ubuntu-24.04
+    environment: ci-release
     steps:
-      - name: wait until the sandbox's CI gate is open
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          until [ "$(curl -fsS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.raw" "$GATE" || echo open)" != closed ]; do sleep 5; done
       - run: echo "the screen layer's journeys pass"
