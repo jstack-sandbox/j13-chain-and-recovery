@@ -18,6 +18,9 @@
     "runner-a": {}
   },
   "sessions": {
-    "model": "stand-in-model-1"
+    "models": {
+      "builder": "stand-in-model-1",
+      "journeys": "stand-in-model-2"
+    }
   }
 }

@@ -13,6 +13,8 @@ on:
         required: false
       check:
         required: false
+      machine:
+        required: false
 permissions: {}
 jobs:
   session:
