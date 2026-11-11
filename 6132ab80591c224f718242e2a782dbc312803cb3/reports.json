@@ -1,0 +1,3 @@
+{
+  "tests/runner-a.report.xml": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\" ?\u003e\n\u003ctestsuites\u003e\n  \u003ctestsuite name=\"contacts/api.test.a\" tests=\"1\" failures=\"1\" skipped=\"0\"\u003e\n    \u003ctestcase classname=\"contacts/api.test.a\" name=\"an operator lists a workspace\u0026#39;s contacts by name, Ana Ortiz before Ben Lee \u0026gt; CONTACT-004/E1 lists a workspace\u0026#39;s contacts by name\" time=\"0\"\u003e\n      \u003cfailure type=\"AssertionFailed\" message=\"expected the zero value to be the one the test names\"\u003e\u003c/failure\u003e\n    \u003c/testcase\u003e\n  \u003c/testsuite\u003e\n\u003c/testsuites\u003e\n"
+}
