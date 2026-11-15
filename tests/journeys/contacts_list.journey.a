@@ -1,0 +1,4 @@
+test("CONTACT-004/E1 the contact list shows a workspace's contacts by name") {
+  open("/contacts")
+  expect(text("Ana Ortiz")).before(text("Ben Lee"))
+}
