@@ -6,7 +6,7 @@ permissions:
 jobs:
   lint-api:
     name: 01 lint api
-    runs-on: ubuntu-24.04
+    runs-on: ${{ vars.CI_RUNS_ON }}
     environment: ci-release
     steps:
       - uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
           awk '/\/\/ unused/ { print FILENAME ":" FNR ": unused variable " $2; bad = 1 } END { exit bad }' src/contacts/api.a
   tests-api:
     name: 02 tests api
-    runs-on: ubuntu-24.04
+    runs-on: ${{ vars.CI_RUNS_ON }}
     environment: ci-release
     steps:
       - name: run the api layer's runner-a tests
@@ -41,13 +41,13 @@ jobs:
           if-no-files-found: ignore
   lint-screen:
     name: 01 lint screen
-    runs-on: ubuntu-24.04
+    runs-on: ${{ vars.CI_RUNS_ON }}
     environment: ci-release
     steps:
       - run: echo "the screen layer's lang-a sources are clean"
   tests-browser:
     name: 02 tests browser
-    runs-on: ubuntu-24.04
+    runs-on: ${{ vars.CI_RUNS_ON }}
     environment: ci-release
     steps:
       - run: echo "the screen layer's journeys pass"
