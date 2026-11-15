@@ -1,0 +1,11 @@
+// The contact API: what a workspace's screens ask of its contacts.
+
+route("GET", "/contacts", list_contacts)
+
+// list_contacts is a workspace's contacts, by name, as the list screen
+// shows them.
+list_contacts(workspace) =
+  sort_by(
+    where(contacts, workspace_id = workspace),
+    "name"
+  )
