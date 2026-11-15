@@ -1,0 +1,1 @@
+screen("/contacts") = table(fetch("GET", "/contacts"), columns: ["name", "email"])
