@@ -7,6 +7,7 @@
   "moves": [
     {"from": "tests", "to": "build:api", "on": "lock_green"},
     {"from": "build:api", "to": "build:screen", "on": "ci_green"},
+    {"from": "build:api", "to": "reviewed", "on": "red_check"},
     {"from": "build:screen", "to": "journeys", "on": "ci_green"},
     {"from": "journeys", "to": "gates", "on": "pushed"},
     {"from": "gates", "to": "reviewed", "on": "ci_green"},
