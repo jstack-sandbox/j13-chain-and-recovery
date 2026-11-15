@@ -1,0 +1,4 @@
+test("CONTACT-004/E1 an empty workspace's contact list says so") {
+  open("/contacts")
+  expect(text("No contacts yet")).visible()
+}
